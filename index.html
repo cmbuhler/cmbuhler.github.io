@@ -1,1 +1,117 @@
-hello world
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <title>Chase Buhler</title>
+</head>
+<body class="w3-light-gray">
+<h1>SITE IS WORK IN PROGRESS!</h1>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <!--<a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-bottomleft" style="width:100%;font-size:22px">Close Menu</a>-->
+    <a href="javascript:void(0)" class="w3-button w3-xlarge w3-hide-large w3-blue w3-margin-right w3-display-topleft" style="margin: 10px 15px 0px;" onclick="w3_close()">✖</a>
+    <div class="w3-container">
+        <img src="images/Chase.jpg" class="w3-circle w3-hide-medium w3-hide-medium" alt="Chase" width="175">
+        <h3 class="w3-padding-32"><b>Chase Buhler</b></h3>
+    </div>
+    <div class="w3-bar-block">
+        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-light-gray">Home</a>
+        <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button">Graphics</a>
+        <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button">Music</a>
+        <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button">Resume</a>
+    </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-blue w3-xlarge w3-padding">
+    <a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">☰</a>
+    <span><a href=index.html style="text-decoration: none;">Chase Buhler</a></span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+    <!-- About Me -->
+    <div class="w3-container" style="margin-top:80px" id="showcase">
+        <h1 class="w3-xxxlarge w3-text-blue"><img src="images/Chase.jpg" class="w3-circle w3-hide-large" alt="Chase" width="150" style="float: right; margin: 10px;"><b>About me</b></h1>
+        <hr class="w3-round big-hr">
+        <p>Hello, I am Chase, a computing science student at the University of Alberta!</p>
+        <p>
+            I am currently in between my third and fourth year of study and am interning in the Faculty of Science.
+            My current role is a web application developer. The experience has been a great intro to work life in the
+            field of CS and has given me valuable insight into where I may want to take my career.
+        </p>
+        <p>
+            I enjoy all things technology and get really excited when learning how things work! I particularly enjoy
+            the science and technology behind computer animation and 3D graphics. I am starting to figure out that
+            this area of study is most interesting to me and I am excited for the learning journey ahead! I like to
+            say I enjoy the art of computing science. I say this not to say I am an artist, because I am really bad
+            at that, but to say I enjoy making tools that will help artists make their work easier and inspire them
+            to create bigger and better projects!
+        </p>
+        <p>
+            Outside of CS related things, I enjoy making and listening to electronic dance music (or EDM for short). I
+            am completely self taught in the music department thanks to many hours of youtube content, but I feel I am
+            a pretty decent artist (Though I have a long way to go haha). I also enjoy going to the movies, playing
+            games, and volunteering at my church (I am currently a camera operator, its quite fun!).
+        </p>
+        <p>
+            This is my personal sight, somehow you stumbled upon it. It houses a variety of things I have worked on
+            and want to share. Feel free to use the menu to find the stuff your looking for!
+        </p>
+    </div>
+
+    <!-- Contact -->
+    <div class="w3-container" id="contact" style="margin-top:75px">
+        <h1 class="w3-xxxlarge w3-text-blue"><b>Contact</b></h1>
+        <hr class="w3-round big-hr">
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-linkedin"></a>
+        <a href="#" class="fa fa-youtube"></a>
+        <a href="#" class="fa fa-github"></a>
+        <p>Here are some details you may be interested in should you wish to contact me:</p>
+        <ul>
+            <li>
+                <b>email: </b> <a href="mailto:cmbuhler@ualberta.ca">cmbuhler@ualberta.ca</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<!--<div class="w3-green w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>-->
+
+<script>
+    // Script to open and close sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+    }
+
+    // Modal Image Gallery
+    function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+    }
+</script>
+
+</body>
+</html>
