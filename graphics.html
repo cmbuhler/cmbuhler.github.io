@@ -156,7 +156,7 @@
     function createVideoFromTemplate(vid, caption, parentElement){
         let template = document.getElementById("vid-template");
         let clone = template.content.cloneNode(true);
-        clone.querySelector('.image-box .image-link video source').src = vid;
+        clone.querySelector('.image-box video source').src = vid;
         clone.querySelector('.image-box .caption').innerHTML = caption;
         parentElement.appendChild(clone);
     }
