@@ -20,8 +20,8 @@
         <h3 class="w3-padding-32"><b>Chase Buhler</b></h3>
     </div>
     <div class="w3-bar-block">
-        <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-light-gray">Home</a>
-        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button">Graphics</a>
+        <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>
+        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-light-gray">Graphics</a>
         <a href="music.html" onclick="w3_close()" class="w3-bar-item w3-button">Music</a>
     </div>
 </nav>
@@ -37,8 +37,40 @@
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
-    <!-- About Me -->
+    <!-- Graphics -->
     <div class="w3-container" style="margin-top:80px" id="showcase">
+        <h1 class="w3-xxlarge w3-text-blue"><b>About my Graphics</b></h1>
+        <hr class="w3-round big-hr">
+        <p>
+            Computer Animation has been something I have really enjoyed watching for a long time. I have seen every film from Disney, Pixar,
+            Dreamworks, etc. During my degree in computing science I began to really enjoy the science behind 3D computer graphics and have
+            since spent a lot of time self-teaching myself 3D rendering concepts and learning more about the history of the field. I took a few 
+            courses as an introduction to 3D modelling and animation, but most of my work has been done as a hobby.<br/>
+            <br/>
+            During school, I spent some of my free time reading about 3D computer science topics while trying out some simple projects. I graduated
+            in the middle of the COVID-19 pandemic and found myself with a lot of time on my hands. I decided to use that time to actually learn to
+            3D model and even animate. <br/>
+            <br/>
+            I am still learning a lot each day, and I am having a lot of fun with this hobby. I have started by using Blender, and probably will for
+            the forseeable future. Blender is an absolutly amazing tool with an even more amazing community. I hope to one day begin contributing to
+            it's development as I learn to use it to make art. Keep scrolling if you would like to see some of my work
+            and the progress I have made!
+        </p>
+        <h1 class="w3-xxlarge w3-text-blue"><b>Images</b></h1>
+        <hr class="w3-round big-hr">
+        <div class="w3-row">
+            <!-- populated in the script at the bottom -->
+            <div id="left-column" class="w3-third">
+
+            </div>
+            <div id="mid-column" class="w3-third">
+
+            </div>
+            <div id="right-column" class="w3-third">
+
+            </div>
+        </div>
+
         
 
         <!-- CONTACT -->
@@ -78,6 +110,22 @@
 
 <!-- W3.CSS Container -->
 <!--<div class="w3-green w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>-->
+<template id="image-template">
+    <div class="image-box">
+        <a class="image-link" href=""><img src="" width="100%"/></a>
+        <p class="caption"></p>
+    </div>
+</template>
+<template id="vid-template">
+    <div class="image-box">
+        <a class="image-link" href="">
+            <video width="100%" autoplay loop>
+                <source src="" type="video/mp4">
+            </video>
+        </a>
+        <p class="caption"></p>
+    </div>
+</template>
 
 <script>
     // Script to open and close sidebar
@@ -98,6 +146,52 @@
         var captionText = document.getElementById("caption");
         captionText.innerHTML = element.alt;
     }
+
+    function createImageFromTemplate(image, caption, parentElement){
+        let template = document.getElementById("image-template");
+        let clone = template.content.cloneNode(true);
+        clone.querySelector('.image-box .image-link').href = image;
+        clone.querySelector('.image-box .image-link img').src = image;
+        clone.querySelector('.image-box .caption').innerHTML = caption;
+        parentElement.appendChild(clone);
+    }
+    function createVideoFromTemplate(vid, caption, parentElement){
+        let template = document.getElementById("vid-template");
+        let clone = template.content.cloneNode(true);
+        clone.querySelector('.image-box .image-link').href = vid;
+        clone.querySelector('.image-box .image-link video source').src = vid;
+        clone.querySelector('.image-box .caption').innerHTML = caption;
+        parentElement.appendChild(clone);
+    }
+
+    //Load All Images
+    let l = document.getElementById("left-column");
+    let m = document.getElementById("mid-column");
+    let r = document.getElementById("right-column");
+
+    createImageFromTemplate('images/Truck.png', 'My first render EVER that I did on my own.', l);
+    createImageFromTemplate('images/Far.png', 'My chess set from an introduction Blender Course.', m);
+    createImageFromTemplate("images/King.png", "Closer shot of the king.", m);
+    createImageFromTemplate("images/Knights2k.png", "Closer shot of the knights.", m);
+    createImageFromTemplate("images/bowling2.png", "My bowling ball scene from the intro course.", r);
+    createImageFromTemplate("images/smash.png", "My bowling ball scene from the intro course.", r);
+    createImageFromTemplate("images/FirstHumanRig.png", "First time rigging and posing a character I modeled.", l);
+    createImageFromTemplate("images/HumanRig2.png", "Another pose.", l);
+    createImageFromTemplate("images/beardedHead.png", "A random low-poly guy I made.", r);
+    createImageFromTemplate("images/DonutNoIcing.png", "My Donut following BlenderGuru's tutorial.", l);
+    createImageFromTemplate("images/CoffeeWIP.png", "My Coffee Cupt following BlenderGuru's tutorial.", l);
+    createImageFromTemplate("images/DonutNTeaStill.png", "Completed donut scene with a Plate, Spoon, and some Sugar Cubes.", l);
+    createVideoFromTemplate("videos/Ball.mp4", "My first bouncing ball animation.", m);
+    createVideoFromTemplate("videos/Ocean.mkv", "A rendering using Blender's Ocean Modifier.", r);
+    createVideoFromTemplate("videos/Banner.mkv", "A banner in the wind. Trying out cloth simulation.", m);
+    createImageFromTemplate("images/CabinWIP1.png", "A work in progress render of a cabin I am making.", m);
+    createVideoFromTemplate("videos/monster.mp4", "A Run Cycle for a monster I created!", r);
+    createImageFromTemplate("images/couchRender.png", "A render of the leather couch I modeled for my cabin.", l);
+    createImageFromTemplate("images/couchRenderStitch.png", "Procedural Leather Texture with Stitches on the couch.", m);
+    createImageFromTemplate("images/couchRenderWear.png", "Testing out some wear textures on the couch.", r);
+    createImageFromTemplate("images/couchRenderWear2.png", "Another wear texture.", r);
+    createImageFromTemplate("images/Fireplace.png", "Fireplace from my WIP Cabin", m);
+    
 </script>
 
 </body>
