@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <title>Chase Buhler</title>
+</head>
+<body class="w3-light-gray">
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <!--<a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-bottomleft" style="width:100%;font-size:22px">Close Menu</a>-->
+    <a href="javascript:void(0)" class="w3-button w3-xlarge w3-hide-large w3-blue w3-margin-right w3-display-topleft" style="margin: 10px 15px 0px;" onclick="w3_close()">✖</a>
+    <div class="w3-container">
+        <img src="images/Chase.jpg" class="w3-circle w3-hide-medium w3-hide-small" alt="Chase" width="175">
+        <h3 class="w3-padding-32"><b>Chase Buhler</b></h3>
+    </div>
+    <div class="w3-bar-block">
+        <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-light-gray">Home</a>
+        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button">Graphics</a>
+        <a href="music.html" onclick="w3_close()" class="w3-bar-item w3-button">Music</a>
+    </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-blue w3-xlarge w3-padding">
+    <a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">☰</a>
+    <span><a href=index.html style="text-decoration: none;">Chase Buhler</a></span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+    <!-- About Me -->
+    <div class="w3-container" style="margin-top:80px" id="showcase">
+        
+
+        <!-- CONTACT -->
+        <h1 class="w3-xxlarge w3-text-blue"><b>Contact</b></h1>
+        <hr class="w3-round big-hr">
+        <h4>Personal</h4>
+        <a href="https://twitter.com/ChaseBuhler" class="fa fa-twitter"></a>
+        <h4>Professional</h4>
+        <a href="https://www.linkedin.com/in/chase-buhler/" class="fa fa-linkedin"></a>
+        <a href="https://github.com/cmbuhler" class="fa fa-github"></a>
+        <script type="text/javascript" language="javascript">
+            // Email obfuscator script 2.1 by Tim Williams, University of Arizona
+            // Random encryption key feature coded by Andrew Moulden
+            // This code is freeware provided these four comment lines remain intact
+            // A wizard to generate this code is at http://www.jottings.com/obfuscator/
+            { coded = "tguhcXxk@hiXuxkWi.ti"
+                key = "UcRbnAEHirXPmypSxCMw7tJuQZ1N3kD9gKOB85f2jWYh6sLzdGa4l0oFvqeVIT"
+                shift=coded.length
+                link=""
+                for (i=0; i<coded.length; i++) {
+                    if (key.indexOf(coded.charAt(i))==-1) {
+                        ltr = coded.charAt(i)
+                        link += (ltr)
+                    }
+                    else {
+                        ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length
+                        link += (key.charAt(ltr))
+                    }
+                }
+                document.write("<a href='mailto:"+link+"' class='fa fa-envelope'></a>")
+            }
+        </script><noscript>Sorry, you need Javascript on to email me.</noscript>
+    </div>
+
+    <!-- End page content --> 
+</div>
+
+<!-- W3.CSS Container -->
+<!--<div class="w3-green w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>-->
+
+<script>
+    // Script to open and close sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+    }
+
+    // Modal Image Gallery
+    function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+    }
+</script>
+
+</body>
+</html>
