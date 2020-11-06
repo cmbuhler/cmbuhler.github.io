@@ -118,11 +118,9 @@
 </template>
 <template id="vid-template">
     <div class="image-box">
-        <a class="image-link" href="">
-            <video width="100%" autoplay loop>
+            <video width="100%" controls loop>
                 <source src="" type="video/mp4">
             </video>
-        </a>
         <p class="caption"></p>
     </div>
 </template>
@@ -158,7 +156,6 @@
     function createVideoFromTemplate(vid, caption, parentElement){
         let template = document.getElementById("vid-template");
         let clone = template.content.cloneNode(true);
-        clone.querySelector('.image-box .image-link').href = vid;
         clone.querySelector('.image-box .image-link video source').src = vid;
         clone.querySelector('.image-box .caption').innerHTML = caption;
         parentElement.appendChild(clone);
